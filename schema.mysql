@@ -1,0 +1,21 @@
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    phone VARCHAR(15),
+    role VARCHAR(20)
+);
+
+CREATE TABLE hospitals (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    location VARCHAR(100),
+    beds INT
+);
+
+CREATE TABLE donors (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    blood_group VARCHAR(5),
+    available BOOLEAN,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
